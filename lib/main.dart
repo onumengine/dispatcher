@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,11 +10,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'dispatcher',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'dispatcher'),
     );
   }
 }
@@ -28,13 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  String currentPosition = "";
 
   @override
   Widget build(BuildContext context) {
@@ -47,20 +42,60 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'Your location is',
             ),
             Text(
-              '$_counter',
+              currentPosition,
               style: Theme.of(context).textTheme.headline4,
+              textAlign: TextAlign.center,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          determineLocation().then(
+            (value) {
+              setState(() {
+                currentPosition = value.toString();
+              });
+            },
+          );
+        },
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
     );
+  }
+
+  Future<Position> determineLocation() async {
+    print('DetermineLocation has been called');
+    bool locationServiceIsEnabled;
+    LocationPermission permission;
+    Position position;
+
+    locationServiceIsEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!locationServiceIsEnabled) {
+      print("ERROR!");
+      return Future.error('Location services are disabled');
+    }
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        print("ERROR!");
+        return Future.error('Location permissions have been denied');
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      print("ERROR!");
+      return Future.error('Location permissions are permanently denied');
+    }
+
+    position = await Geolocator.getCurrentPosition();
+    print(position.toString());
+    return position;
   }
 }
