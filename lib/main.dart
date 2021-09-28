@@ -1,3 +1,4 @@
+import 'package:dispatcher/repository/tracking_client.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -32,6 +33,11 @@ class _MyHomePageState extends State<MyHomePage> {
   String currentPosition = "";
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -59,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
               setState(() {
                 currentPosition = value.toString();
               });
+              TrackingClient().broadcastLocation();
             },
           );
         },

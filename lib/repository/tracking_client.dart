@@ -5,12 +5,12 @@ import 'package:http/http.dart' as http;
 class TrackingClient {
   http.Client client = http.Client();
 
-  Future<void> broadcastLocation(String locationData) async {
+  Future<void> broadcastLocation() async {
     try {
-      // todo
-      // var response = await client.post();
+      var response = await client.get(Uri.parse('http://127.0.0.1:8000/'));
+      print(response);
     } on Exception catch (error) {
-      // todo
+      print('ERROR: $error');
     }
   }
 }
