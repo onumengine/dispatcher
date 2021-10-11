@@ -1,4 +1,6 @@
 import 'package:dispatcher/ui/pages/home_page.dart';
+import 'package:dispatcher/ui/pages/unknown_page.dart';
+import 'package:dispatcher/utils/app_router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,6 +18,10 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.orangeAccent,
       ),
       home: HomePage(),
+      onGenerateRoute: (settings) => AppRouter().generateRoute(settings),
+      onUnknownRoute: (settings) => MaterialPageRoute(
+        builder: (context) => UnknownPage(),
+      ),
     );
   }
 }
