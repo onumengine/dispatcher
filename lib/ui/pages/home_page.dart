@@ -7,9 +7,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('dispatcher'),
-      ),
       body: HomeFragment(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},

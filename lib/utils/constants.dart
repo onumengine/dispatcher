@@ -5,3 +5,4 @@ const IMAGES_PATH = 'assets/images';
 
 const ROUTE_HOME = '/';
 const ROUTE_MAP = '/map';
+const ROUTE_SERVICE_SELECTION = '/select_service';
