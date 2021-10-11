@@ -1,4 +1,4 @@
-import 'package:dispatcher/ui/screens/home_screen.dart';
+import 'package:dispatcher/ui/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
