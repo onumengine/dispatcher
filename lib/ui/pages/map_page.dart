@@ -5,14 +5,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
-class MapScreen extends StatefulWidget {
-  const MapScreen({Key? key}) : super(key: key);
+class MapPage extends StatefulWidget {
+  const MapPage({Key? key}) : super(key: key);
 
   @override
-  _MapScreenState createState() => _MapScreenState();
+  _MapPageState createState() => _MapPageState();
 }
 
-class _MapScreenState extends State<MapScreen> {
+class _MapPageState extends State<MapPage> {
   @override
   void initState() {
     super.initState();

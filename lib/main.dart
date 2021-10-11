@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         accentColor: Colors.orangeAccent,
       ),
-      home: HomeScreen(),
+      home: HomePage(),
     );
   }
 }
