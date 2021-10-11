@@ -1,4 +1,6 @@
 import 'package:dispatcher/ui/organisms/home_fragment.dart';
+import 'package:dispatcher/utils/colors.dart';
+import 'package:dispatcher/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,9 +9,15 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: brandBackgroundApp,
       body: HomeFragment(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        backgroundColor: Colors.red,
+        foregroundColor: Colors.white,
+        child: Icon(Icons.shopping_cart_outlined),
+        onPressed: () {
+          Navigator.of(context).pushNamed(ROUTE_SERVICE_SELECTION);
+        },
       ),
     );
   }

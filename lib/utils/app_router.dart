@@ -6,7 +6,11 @@ import 'package:flutter/material.dart';
 
 class AppRouter {
   Route<dynamic>? generateRoute(RouteSettings routeSettings) {
-    switch (routeSettings.name) {
+    return getRouteFromName(routeSettings.name!);
+  }
+
+  Route<dynamic>? getRouteFromName(String name) {
+    switch (name) {
       case ROUTE_HOME:
         return MaterialPageRoute(builder: (context) => HomePage());
       case ROUTE_MAP:
@@ -14,6 +18,7 @@ class AppRouter {
       case ROUTE_SERVICE_SELECTION:
         return MaterialPageRoute(builder: (context) => ServiceSelectionPage());
       default:
+        break;
     }
   }
 }
