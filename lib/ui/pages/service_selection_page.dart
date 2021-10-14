@@ -1,4 +1,6 @@
 import 'package:dispatcher/ui/atoms/service_tile.dart';
+import 'package:dispatcher/utils/constants.dart';
+import 'package:dispatcher/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 class ServiceSelectionPage extends StatelessWidget {
@@ -44,6 +46,10 @@ class ServiceSelectionPage extends StatelessWidget {
               ServiceTile(
                 title: 'Send something',
                 subtitle: 'We\'ll pick up and drop off your items',
+                onTap: () {
+                  Navigator.of(context)
+                      .pushReplacementNamed(ROUTE_SET_LOCATIONS);
+                },
               ),
               SizedBox(
                 height: 14,
@@ -51,6 +57,9 @@ class ServiceSelectionPage extends StatelessWidget {
               ServiceTile(
                 title: 'Buy something',
                 subtitle: 'We\'ll purchase and deliver whatever you need',
+                onTap: () {
+                  Extensions().showSnackbar(context, 'Not implemented yet');
+                },
               ),
               Expanded(
                 flex: 19,
