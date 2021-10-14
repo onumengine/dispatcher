@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:dispatcher/features/location/presentation/components/map.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
 
 class MapPage extends StatelessWidget {
   const MapPage({Key? key}) : super(key: key);
