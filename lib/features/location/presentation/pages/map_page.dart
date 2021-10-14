@@ -1,18 +1,14 @@
 import 'dart:io';
 
-import 'package:dispatcher/ui/organisms/map.dart';
+import 'package:dispatcher/features/location/presentation/components/map.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
-class MapPage extends StatefulWidget {
+class MapPage extends StatelessWidget {
   const MapPage({Key? key}) : super(key: key);
 
-  @override
-  _MapPageState createState() => _MapPageState();
-}
-
-class _MapPageState extends State<MapPage> {
+  /*
   @override
   void initState() {
     super.initState();
@@ -32,6 +28,7 @@ class _MapPageState extends State<MapPage> {
       );
     }
   }
+  */
 
   @override
   Widget build(BuildContext context) {
@@ -54,29 +51,5 @@ class _MapPageState extends State<MapPage> {
         ],
       ),
     );
-  }
-
-  Future<Position> determineLocation() async {
-    bool locationServiceIsEnabled;
-    LocationPermission permission;
-
-    locationServiceIsEnabled = await Geolocator.isLocationServiceEnabled();
-    if (!locationServiceIsEnabled) {
-      return Future.error('Location services are disabled');
-    }
-
-    permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.denied) {
-        return Future.error('Location permissions have beenn denied');
-      }
-    }
-
-    if (permission == LocationPermission.deniedForever) {
-      return Future.error('Location permissions are permanently denied');
-    }
-
-    return await Geolocator.getCurrentPosition();
   }
 }

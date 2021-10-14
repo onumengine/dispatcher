@@ -1,7 +1,10 @@
 import 'package:geolocator/geolocator.dart';
 
-class LocationRepository {
-  Future<Position> determineLocation() async {
+class LocationApi {
+  /// I can use just the same [fetchLocation] method for broadcasting.
+  /// All I have to do is call it multiple times
+
+  Future fetchLocation() async {
     print('DetermineLocation has been called');
     bool locationServiceIsEnabled;
     LocationPermission permission;

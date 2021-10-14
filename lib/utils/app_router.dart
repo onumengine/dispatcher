@@ -1,7 +1,6 @@
-import 'package:dispatcher/ui/pages/home_page.dart';
-import 'package:dispatcher/ui/pages/map_page.dart';
+import 'package:dispatcher/features/location/presentation/pages/home_page.dart';
+import 'package:dispatcher/features/location/presentation/pages/map_page.dart';
 import 'package:dispatcher/ui/pages/service_selection_page.dart';
-import 'package:dispatcher/ui/pages/set_locations_page.dart';
 import 'package:dispatcher/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -18,8 +17,6 @@ class AppRouter {
         return MaterialPageRoute(builder: (context) => MapPage());
       case ROUTE_SERVICE_SELECTION:
         return MaterialPageRoute(builder: (context) => ServiceSelectionPage());
-      case ROUTE_SET_LOCATIONS:
-        return MaterialPageRoute(builder: (context) => SetLocationsPage());
       default:
         break;
     }
