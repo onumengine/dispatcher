@@ -1,6 +1,6 @@
 import 'package:dispatcher/features/location/presentation/pages/home_page.dart';
 import 'package:dispatcher/features/location/presentation/pages/map_page.dart';
-import 'package:dispatcher/ui/pages/service_selection_page.dart';
+import 'package:dispatcher/core/presentation/pages/service_selection_page.dart';
 import 'package:dispatcher/utils/constants.dart';
 import 'package:flutter/material.dart';
 

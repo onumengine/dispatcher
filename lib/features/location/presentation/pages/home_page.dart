@@ -1,4 +1,4 @@
-import 'package:dispatcher/ui/organisms/home_fragment.dart';
+import 'package:dispatcher/core/presentation/components/home_fragment.dart';
 import 'package:dispatcher/utils/colors.dart';
 import 'package:dispatcher/utils/constants.dart';
 import 'package:flutter/material.dart';
