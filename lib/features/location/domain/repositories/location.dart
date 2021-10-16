@@ -1,4 +1,6 @@
+import 'package:dispatcher/features/location/domain/entities/position.dart';
+
 abstract class LocationRepository {
-  Future<dynamic> determinePosition() async {}
-  Future<void> broadcastPosition() async {}
+  dynamic determinePosition() async* {}
+  dynamic broadcastPosition() async {}
 }
