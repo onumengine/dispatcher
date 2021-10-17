@@ -3,18 +3,19 @@ import 'dart:convert';
 import 'package:dispatcher/features/location/domain/entities/position.dart';
 
 class LocationModel extends Position {
-  double? latitude, longitude;
+  late final double latitude, longitude;
 
-  LocationModel.fromJsonString(String jsonString) {
-    Map decodedObject = jsonDecode(jsonString);
-    latitude = decodedObject['latitude'];
-    longitude = decodedObject['longitude'];
-  }
+  LocationModel.fromJsonString(String jsonString)
+      : super(
+          latitude: jsonDecode(jsonString)['latitude'],
+          longitude: jsonDecode(jsonString)['longitude'],
+        );
 
-  LocationModel.fromJsonMap(Map<dynamic, dynamic> locationInJson) {
-    latitude = locationInJson['latitude'];
-    longitude = locationInJson['longitude'];
-  }
+  LocationModel.fromJsonMap(Map<dynamic, dynamic> locationInJson)
+      : super(
+          latitude: locationInJson['latitude'],
+          longitude: locationInJson['longitude'],
+        );
 
   String toJsonString() {
     return jsonEncode({
