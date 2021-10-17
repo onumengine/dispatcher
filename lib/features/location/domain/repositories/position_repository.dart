@@ -1,4 +1,4 @@
 abstract class PositionRepository {
-  dynamic determinePosition() async* {}
+  dynamic getPosition() async* {}
   dynamic broadcastPosition() async {}
 }

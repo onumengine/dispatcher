@@ -12,7 +12,7 @@ class LocationDataRepository implements PositionRepository {
   }
 
   @override
-  Future<Position> determinePosition() async {
+  Future<Position> getPosition() async {
     // TODO: implement broadcastPosition
     throw UnimplementedError();
   }
