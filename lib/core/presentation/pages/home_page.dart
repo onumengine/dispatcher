@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
         foregroundColor: Colors.white,
         child: Icon(Icons.shopping_cart_outlined),
         onPressed: () {
-          Navigator.of(context).pushNamed(ROUTE_SERVICE_SELECTION);
+          Navigator.of(context).pushNamed(ROUTE_MAP);
         },
       ),
     );
