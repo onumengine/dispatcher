@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.red,
         foregroundColor: Colors.white,
-        child: Icon(Icons.shopping_cart_outlined),
+        child: Icon(Icons.location_pin),
         onPressed: () {
           Navigator.of(context).pushNamed(ROUTE_MAP);
         },
