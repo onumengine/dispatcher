@@ -15,6 +15,8 @@ class ControllerInitializationEvent extends MapEvent {
   List<Object?> get props => [this.controller];
 }
 
+class LocationPinpointEvent extends MapEvent {}
+
 class ZoomIncrementEvent extends MapEvent {}
 
 class ZoomDecrementEvent extends MapEvent {}
