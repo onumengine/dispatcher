@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:dispatcher/core/error/errors.dart';
+import 'package:dispatcher/core/error/failure.dart';
 
 abstract class UseCase<Type> {
-  Future<Either<CustomError, Type>> call();
+  Future<Either<Failure, Type>> call();
 }
