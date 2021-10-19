@@ -1,14 +1,14 @@
-class Position {
+class Location {
   final double latitude, longitude;
 
-  Position({
+  Location({
     required this.latitude,
     required this.longitude,
   });
 
   @override
   bool operator ==(Object other) =>
-      (other is Position) &&
+      (other is Location) &&
       (other.latitude == this.latitude) &&
       (other.longitude == this.longitude);
 
