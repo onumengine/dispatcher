@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dispatcher/features/location/data/models/location_model.dart';
 import 'package:dispatcher/features/location/domain/entities/location.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -16,6 +18,14 @@ void main() {
       final String rawJsonString = readLocation('location.json');
       final tLocationFromString = LocationModel.fromJsonString(rawJsonString);
       expect(tLocationFromString, tLocationModel);
+    });
+
+    test('fromJsonMap returns an original object', () {
+      final Map<String, dynamic> jsonMap =
+          jsonDecode(readLocation('location.json'));
+      final tLocationFromMap = LocationModel.fromJsonMap(jsonMap);
+
+      expect(tLocationFromMap, tLocationModel);
     });
   });
 }

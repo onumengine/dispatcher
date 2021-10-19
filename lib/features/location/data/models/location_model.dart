@@ -17,11 +17,12 @@ class LocationModel extends Location {
     );
   }
 
-  LocationModel.fromJsonMap(Map<dynamic, dynamic> locationInJson)
-      : super(
-          latitude: locationInJson['latitude'],
-          longitude: locationInJson['longitude'],
-        );
+  factory LocationModel.fromJsonMap(Map<dynamic, dynamic> locationInJson) {
+    return LocationModel(
+      latitude: locationInJson['latitude'],
+      longitude: locationInJson['longitude'],
+    );
+  }
 
   String toJsonString() {
     return jsonEncode({
