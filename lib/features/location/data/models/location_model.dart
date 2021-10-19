@@ -26,15 +26,15 @@ class LocationModel extends Location {
 
   String toJsonString() {
     return jsonEncode({
-      'latitude': '$latitude',
-      'longitude': '$longitude',
+      'latitude': latitude,
+      'longitude': longitude,
     });
   }
 
-  Map<String, String> toJsonMap() {
+  Map<String, dynamic> toJsonMap() {
     return {
-      'latitude': '$latitude',
-      'longitude': '$longitude',
+      'latitude': latitude,
+      'longitude': longitude,
     };
   }
 

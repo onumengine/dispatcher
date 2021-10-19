@@ -8,24 +8,33 @@ import '../../../../dummy_data/location_reader.dart';
 
 void main() {
   LocationModel tLocationModel = LocationModel(latitude: 0.0, longitude: 0.0);
+  final String rawJsonString = readLocation('location.json');
 
   test('is a subclass of the Location entity', () {
     expect(tLocationModel, isA<Location>());
   });
 
-  group('fromJson- initiaizers', () {
-    test('fromJsonString returns an original object', () {
-      final String rawJsonString = readLocation('location.json');
+  group('JSON INITIALIZERS:', () {
+    test('fromJsonString returns a valid model', () {
       final tLocationFromString = LocationModel.fromJsonString(rawJsonString);
       expect(tLocationFromString, tLocationModel);
     });
 
-    test('fromJsonMap returns an original object', () {
-      final Map<String, dynamic> jsonMap =
-          jsonDecode(readLocation('location.json'));
+    test('fromJsonMap returns a valid model', () {
+      final Map<String, dynamic> jsonMap = jsonDecode(rawJsonString);
       final tLocationFromMap = LocationModel.fromJsonMap(jsonMap);
 
       expect(tLocationFromMap, tLocationModel);
+    });
+  });
+
+  group('JSON ENCODERS', () {
+    test('toJsonString returns a valid json string', () {
+      expect(tLocationModel.toJsonString(), rawJsonString);
+    });
+
+    test('toJsonMap returns a valid map', () {
+      expect(tLocationModel.toJsonMap(), jsonDecode(rawJsonString));
     });
   });
 }
