@@ -1,4 +1,4 @@
-import 'package:dispatcher/core/presentation/components/service_tile.dart';
+import 'package:dispatcher/features/main/presentation/widgets/service_tile.dart';
 import 'package:dispatcher/utils/constants.dart';
 import 'package:dispatcher/utils/extensions.dart';
 import 'package:flutter/material.dart';

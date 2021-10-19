@@ -1,5 +1,5 @@
-import 'package:dispatcher/core/presentation/pages/unknown_page.dart';
-import 'package:dispatcher/core/presentation/pages/home_page.dart';
+import 'package:dispatcher/features/main/presentation/unknown/unknown_page.dart';
+import 'package:dispatcher/features/main/presentation/home/home_page.dart';
 import 'package:dispatcher/utils/app_router.dart';
 import 'package:dispatcher/utils/colors.dart';
 import 'package:flutter/material.dart';

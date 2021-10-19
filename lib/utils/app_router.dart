@@ -1,8 +1,8 @@
-import 'package:dispatcher/core/presentation/pages/home_page.dart';
+import 'package:dispatcher/features/main/presentation/home/home_page.dart';
 import 'package:dispatcher/features/location/presentation/bloc/bloc.dart';
 import 'package:dispatcher/features/location/presentation/bloc/state.dart';
 import 'package:dispatcher/features/location/presentation/pages/map_page.dart';
-import 'package:dispatcher/core/presentation/pages/service_selection_page.dart';
+import 'package:dispatcher/features/main/presentation/service_selection/service_selection_page.dart';
 import 'package:dispatcher/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
