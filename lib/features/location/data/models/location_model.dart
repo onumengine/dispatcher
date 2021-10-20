@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dispatcher/features/location/domain/entities/location.dart';
+import 'package:geolocator/geolocator.dart';
 
 class LocationModel extends Location {
   late final double latitude, longitude;
@@ -9,6 +10,13 @@ class LocationModel extends Location {
     required this.latitude,
     required this.longitude,
   }) : super(latitude: latitude, longitude: longitude);
+
+  factory LocationModel.fromPosition(Position position) {
+    return LocationModel(
+      latitude: position.latitude,
+      longitude: position.longitude,
+    );
+  }
 
   factory LocationModel.fromJsonString(String jsonString) {
     return LocationModel(
