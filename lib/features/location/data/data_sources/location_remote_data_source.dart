@@ -1,3 +1,4 @@
+import 'package:dispatcher/core/platform/location_permission_info.dart';
 import 'package:dispatcher/features/location/data/models/location_model.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -6,6 +7,12 @@ abstract class LocationRemoteDataSource {
 }
 
 class LocationRemoteDataSourceImpl implements LocationRemoteDataSource {
+  final LocationPermissionInfo permissionInfo;
+
+  LocationRemoteDataSourceImpl({
+    required this.permissionInfo
+  });
+  
   Future<LocationModel> getLocation() async {
     Position position = await getPosition();
     return LocationModel.fromPosition(position);

@@ -1,11 +1,5 @@
 import 'package:geolocator/geolocator.dart';
 
-enum PermissionStatus {
-  granted,
-  denied,
-  deniedForever,
-}
-
 abstract class LocationPermissionInfo {
   Future<LocationPermission> getStatus();
 }
