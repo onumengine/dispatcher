@@ -1,19 +1,26 @@
+import 'package:dispatcher/core/platform/network_info.dart';
+import 'package:dispatcher/features/location/data/data_sources/location_remote_data_source.dart';
 import 'package:dispatcher/features/location/domain/entities/location.dart';
 import 'package:dispatcher/features/location/domain/repositories/location.dart';
 
 class LocationRepoImplementation implements LocationRepository {
-  /// These methods return Position objects because repositories in the data
-  /// layer are supposed to return entities
+  final LocationRemoteDataSource locationDataSource;
+  final NetworkInfo networkInfo;
+
+  LocationRepoImplementation({
+    required this.locationDataSource,
+    required this.networkInfo,
+  });
 
   @override
   Stream<Location> broadcastPosition() async* {
-    // TODO: implement broadcastPosition
-    throw UnimplementedError();
+    Location location = await this.locationDataSource.getLocation();
+    yield location;
   }
 
   @override
   Future<Location> getPosition() async {
-    // TODO: implement broadcastPosition
-    throw UnimplementedError();
+    Location location = await this.locationDataSource.getLocation();
+    return location;
   }
 }

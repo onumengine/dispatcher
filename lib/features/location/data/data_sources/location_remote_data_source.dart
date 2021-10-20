@@ -1,15 +1,17 @@
+import 'package:dispatcher/features/location/data/models/location_model.dart';
 import 'package:geolocator/geolocator.dart';
 
-abstract class LocationDataSource {
-  Future<Position> getLocation();
-  Future<void> cacheLocation(Position location);
+abstract class LocationRemoteDataSource {
+  Future<LocationModel> getLocation();
 }
 
-class LocationApi implements LocationDataSource {
-  /// I can use just the same [fetchLocation] method for broadcasting.
-  /// All I have to do is call it multiple times
+class LocationRemoteDataSourceImpl implements LocationRemoteDataSource {
+  Future<LocationModel> getLocation() async {
+    Position position = await getPosition();
+    return LocationModel.fromPosition(position);
+  }
 
-  Future<Position> getLocation() async {
+  Future<Position> getPosition() async {
     bool locationServiceIsEnabled;
     LocationPermission permission;
     Position position;
@@ -34,11 +36,5 @@ class LocationApi implements LocationDataSource {
     position = await Geolocator.getCurrentPosition();
     print(position.toString());
     return position;
-  }
-
-  @override
-  Future<void> cacheLocation(Position location) {
-    // TODO: implement cacheLocation
-    throw UnimplementedError();
   }
 }
