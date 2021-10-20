@@ -1,4 +1,4 @@
-import 'package:dispatcher/core/platform/network_info.dart';
+import 'package:dispatcher/core/network/network_info.dart';
 import 'package:dispatcher/features/location/data/data_sources/location_remote_data_source.dart';
 import 'package:dispatcher/features/location/domain/entities/location.dart';
 import 'package:dispatcher/features/location/domain/repositories/location.dart';
