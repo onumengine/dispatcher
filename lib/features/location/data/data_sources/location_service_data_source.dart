@@ -4,10 +4,10 @@ abstract class LocationServiceDataSource {
   Future<bool> locationServiceIsEnabled();
 }
 
-class LocationServiceDataSourceImplementation implements LocationServiceDataSource {
+class DeviceLocationServiceDataSource implements LocationServiceDataSource {
   final LocationServiceInfo locationServiceInfo;
 
-  LocationServiceDataSourceImplementation(this.locationServiceInfo);
+  DeviceLocationServiceDataSource(this.locationServiceInfo);
 
   @override
   Future<bool> locationServiceIsEnabled() async {

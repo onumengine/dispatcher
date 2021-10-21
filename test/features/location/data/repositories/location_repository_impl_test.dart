@@ -13,13 +13,13 @@ class MockNetworkInfo extends Mock implements NetworkInfo {}
 void main() {
   late MockLocationRemoteDataSource dataSource;
   late MockNetworkInfo networkInfo;
-  late DeviceLocationRepository locationRepositoryImplementation;
+  late DeviceLocationRepository deviceLocationRepository;
   late Future<LocationModel> tLocation;
 
   setUp(() {
     dataSource = MockLocationRemoteDataSource();
     networkInfo = MockNetworkInfo();
-    locationRepositoryImplementation = DeviceLocationRepository(
+    deviceLocationRepository = DeviceLocationRepository(
       locationDataSource: dataSource,
       networkInfo: networkInfo,
     );
@@ -29,6 +29,6 @@ void main() {
   test('Location Repo Implementation', () {
     when(dataSource.getLocation()).thenAnswer((_) async => tLocation);
 
-    expect(locationRepositoryImplementation.getLocation(), tLocation);
+    expect(deviceLocationRepository.getLocation(), tLocation);
   });
 }
