@@ -1,6 +1,6 @@
 import 'package:dispatcher/core/network/network_info.dart';
 import 'package:dispatcher/features/location/data/data_sources/location_remote_data_source.dart';
-import 'package:dispatcher/features/location/domain/entities/location.dart';
+import 'package:dispatcher/features/location/domain/entities/location_entity.dart';
 import 'package:dispatcher/features/location/domain/repositories/location.dart';
 
 class LocationRepositoryImplementation implements LocationRepository {
@@ -13,14 +13,14 @@ class LocationRepositoryImplementation implements LocationRepository {
   });
 
   @override
-  Stream<Location> broadcastPosition() async* {
-    Location location = await this.locationDataSource.getLocation();
+  Stream<LocationEntity> broadcastLocation() async* {
+    LocationEntity location = await this.locationDataSource.getLocation();
     yield location;
   }
 
   @override
-  Future<Location> getPosition() async {
-    Location location = await this.locationDataSource.getLocation();
+  Future<LocationEntity> getLocation() async {
+    LocationEntity location = await this.locationDataSource.getLocation();
     return location;
   }
 }

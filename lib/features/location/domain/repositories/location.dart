@@ -1,4 +1,4 @@
 abstract class LocationRepository {
-  dynamic getPosition() async* {}
-  dynamic broadcastPosition() async {}
+  dynamic getLocation() async* {}
+  dynamic broadcastLocation() async {}
 }

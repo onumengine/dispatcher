@@ -1,14 +1,14 @@
-class Location {
+class LocationEntity {
   final double latitude, longitude;
 
-  Location({
+  LocationEntity({
     required this.latitude,
     required this.longitude,
   });
 
   @override
   bool operator ==(Object other) =>
-      (other is Location) &&
+      (other is LocationEntity) &&
       (other.latitude == this.latitude) &&
       (other.longitude == this.longitude);
 

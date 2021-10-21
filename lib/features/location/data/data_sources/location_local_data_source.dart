@@ -1,6 +1,6 @@
-import 'package:dispatcher/features/location/domain/entities/location.dart';
+import 'package:dispatcher/features/location/domain/entities/location_entity.dart';
 
 abstract class LocationLocalDataSource {
-  Future<Location> getLastCachedLocation();
-  Future<bool> cacheLocation(Location location);
+  Future<LocationEntity> getLastCachedLocation();
+  Future<bool> cacheLocation(LocationEntity location);
 }

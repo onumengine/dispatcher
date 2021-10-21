@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:dispatcher/features/location/domain/entities/location.dart';
+import 'package:dispatcher/features/location/domain/entities/location_entity.dart';
 import 'package:geolocator/geolocator.dart';
 
-class LocationModel extends Location {
+class LocationModel extends LocationEntity {
   late final double latitude, longitude;
 
   LocationModel({

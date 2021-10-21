@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dispatcher/features/location/data/models/location_model.dart';
-import 'package:dispatcher/features/location/domain/entities/location.dart';
+import 'package:dispatcher/features/location/domain/entities/location_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../../dummy_data/location_reader.dart';
@@ -11,7 +11,7 @@ void main() {
   final String rawJsonString = readLocation('location.json');
 
   test('is a subclass of the Location entity', () {
-    expect(tLocationModel, isA<Location>());
+    expect(tLocationModel, isA<LocationEntity>());
   });
 
   group('JSON INITIALIZERS:', () {
