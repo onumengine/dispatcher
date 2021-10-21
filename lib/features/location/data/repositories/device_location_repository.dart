@@ -3,11 +3,11 @@ import 'package:dispatcher/features/location/data/data_sources/location_remote_d
 import 'package:dispatcher/features/location/domain/entities/location_entity.dart';
 import 'package:dispatcher/features/location/domain/repositories/location_repository.dart';
 
-class LocationRepositoryImplementation implements LocationRepository {
+class DeviceLocationRepository implements LocationRepository {
   final LocationRemoteDataSource locationDataSource;
   final NetworkInfo networkInfo;
 
-  LocationRepositoryImplementation({
+  DeviceLocationRepository({
     required this.locationDataSource,
     required this.networkInfo,
   });

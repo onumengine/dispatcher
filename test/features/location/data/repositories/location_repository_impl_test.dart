@@ -1,7 +1,7 @@
 import 'package:dispatcher/core/network/network_info.dart';
 import 'package:dispatcher/features/location/data/data_sources/location_remote_data_source.dart';
 import 'package:dispatcher/features/location/data/models/location_model.dart';
-import 'package:dispatcher/features/location/data/repositories/location_repository_impl.dart';
+import 'package:dispatcher/features/location/data/repositories/device_location_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
@@ -13,13 +13,13 @@ class MockNetworkInfo extends Mock implements NetworkInfo {}
 void main() {
   late MockLocationRemoteDataSource dataSource;
   late MockNetworkInfo networkInfo;
-  late LocationRepositoryImplementation locationRepositoryImplementation;
+  late DeviceLocationRepository locationRepositoryImplementation;
   late Future<LocationModel> tLocation;
 
   setUp(() {
     dataSource = MockLocationRemoteDataSource();
     networkInfo = MockNetworkInfo();
-    locationRepositoryImplementation = LocationRepositoryImplementation(
+    locationRepositoryImplementation = DeviceLocationRepository(
       locationDataSource: dataSource,
       networkInfo: networkInfo,
     );
