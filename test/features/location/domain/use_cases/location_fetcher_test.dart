@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dispatcher/features/location/domain/entities/location_entity.dart';
-import 'package:dispatcher/features/location/domain/repositories/location.dart';
+import 'package:dispatcher/features/location/domain/repositories/location_repository.dart';
 import 'package:dispatcher/features/location/domain/use_cases/location_fetcher.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
