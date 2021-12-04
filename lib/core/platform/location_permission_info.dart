@@ -1,12 +1,14 @@
 import 'package:geolocator/geolocator.dart';
 
 abstract class LocationPermissionInfo {
-  Future<LocationPermission> getStatus();
+  Future<bool> get locationPermissionIsGranted;
+  Future<LocationPermission> get getLocationPermission;
 }
 
 class LocationPermissionInfoImplementation implements LocationPermissionInfo {
-  @override
-  Future<LocationPermission> getStatus() async {
-    return await Geolocator.checkPermission();
-  }
+  Future<bool> get locationPermissionIsGranted async =>
+      await Geolocator.checkPermission() == LocationPermission.always;
+
+  Future<LocationPermission> get getLocationPermission async =>
+      await Geolocator.checkPermission();
 }
