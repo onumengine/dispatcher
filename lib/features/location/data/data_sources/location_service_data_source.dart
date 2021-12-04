@@ -1,16 +1,14 @@
-import 'package:dispatcher/core/platform/location_service_info.dart';
+import 'package:dispatcher/features/location/data/models/location_service_model.dart';
 
 abstract class LocationServiceDataSource {
-  Future<bool> locationServiceIsEnabled();
+  requestLocationService();
 }
 
 class DeviceLocationServiceDataSource implements LocationServiceDataSource {
-  final LocationServiceInfo locationServiceInfo;
-
-  DeviceLocationServiceDataSource(this.locationServiceInfo);
+  DeviceLocationServiceDataSource();
 
   @override
-  Future<bool> locationServiceIsEnabled() async {
-    return await locationServiceInfo.locationIsEnabled();
+  void requestLocationService() async {
+    // TODO: Write code to check if the location service is enabled
   }
 }

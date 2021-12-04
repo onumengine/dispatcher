@@ -1,5 +1,7 @@
 class CacheExeption implements Exception {}
 
-class LocationException implements Exception {}
+class LocationServiceDisabledException implements Exception {}
+
+class LocationPermissionDeniedException implements Exception {}
 
 class NetworkException implements Exception {}

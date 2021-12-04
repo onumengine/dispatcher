@@ -1,23 +1,24 @@
-import 'package:dispatcher/core/platform/location_permission_info.dart';
 import 'package:dispatcher/features/location/data/models/location_model.dart';
 import 'package:geolocator/geolocator.dart';
 
-abstract class LocationRemoteDataSource {
+abstract class LocationSensorDataSource {
   Future<LocationModel> getLocation();
 }
 
-class LocationRemoteDataSourceImpl implements LocationRemoteDataSource {
-  final LocationPermissionInfo permissionInfo;
+class LocationSensorDataSourceImpl implements LocationSensorDataSource {
+  LocationSensorDataSourceImpl();
 
-  LocationRemoteDataSourceImpl({
-    required this.permissionInfo
-  });
-  
   Future<LocationModel> getLocation() async {
-    Position position = await getPosition();
-    return LocationModel.fromPosition(position);
+    try {
+      Position position = await Geolocator.getCurrentPosition();
+      return LocationModel.fromPosition(position);
+    } on Exception catch (e) {
+      throw e;
+    }
   }
 
+  /*
+  TODO: Delete this method if the tests for location and permission pass
   Future<Position> getPosition() async {
     bool locationServiceIsEnabled;
     LocationPermission permission;
@@ -44,4 +45,5 @@ class LocationRemoteDataSourceImpl implements LocationRemoteDataSource {
     print(position.toString());
     return position;
   }
+  */
 }

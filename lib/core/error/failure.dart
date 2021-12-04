@@ -5,6 +5,10 @@ abstract class Failure extends Equatable {
   List<Object?> get props => [];
 }
 
-class LocationDisabledError extends Failure {}
+class NetworkConnectionFailure extends Failure {}
 
-class LocationPermissionError extends Failure {}
+class LocationServiceDisabledFailure extends Failure {}
+
+class LocationPermissionFailure extends Failure {}
+
+class LocationFetchingFailure extends Failure {}

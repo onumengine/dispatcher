@@ -1,12 +1,10 @@
+import 'package:dispatcher/features/location/presentation/view_models/MapViewModel.dart';
+import 'package:dispatcher/features/location/presentation/views/pages/map_page.dart';
 import 'package:dispatcher/features/main/presentation/home/home_page.dart';
-import 'package:dispatcher/features/location/presentation/bloc/bloc.dart';
-import 'package:dispatcher/features/location/presentation/bloc/state.dart';
-import 'package:dispatcher/features/location/presentation/pages/map_page.dart';
 import 'package:dispatcher/features/main/presentation/service_selection/service_selection_page.dart';
 import 'package:dispatcher/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:provider/provider.dart';
 
 class AppRouter {
   Route<dynamic>? generateRoute(RouteSettings routeSettings) {
@@ -19,12 +17,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (context) => HomePage());
       case ROUTE_MAP:
         return MaterialPageRoute(
-          builder: (context) => BlocProvider(
-            create: (context) => MapBloc(
-              MapLoadedState(
-                pointerLocation: const LatLng(45.521563, -122.677433),
-              ),
-            ),
+          builder: (context) => ChangeNotifierProvider<MapViewModel>(
+            create: (context) => MapViewModel(),
             child: MapPage(),
           ),
         );

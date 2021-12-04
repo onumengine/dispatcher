@@ -1,12 +1,12 @@
 import 'package:dispatcher/core/network/network_info.dart';
-import 'package:dispatcher/features/location/data/data_sources/location_remote_data_source.dart';
+import 'package:dispatcher/features/location/data/data_sources/location_sensor_data_source.dart';
 import 'package:dispatcher/features/location/data/models/location_model.dart';
 import 'package:dispatcher/features/location/data/repositories/device_location_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
 class MockLocationRemoteDataSource extends Mock
-    implements LocationRemoteDataSource {}
+    implements LocationSensorDataSource {}
 
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
