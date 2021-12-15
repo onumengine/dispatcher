@@ -1,10 +1,12 @@
 import 'package:dispatcher/features/main/presentation/unknown/unknown_page.dart';
 import 'package:dispatcher/features/main/presentation/home/home_page.dart';
+import 'package:dispatcher/injection_container.dart' as injector;
 import 'package:dispatcher/utils/app_router.dart';
 import 'package:dispatcher/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  injector.init();
   runApp(MyApp());
 }
 

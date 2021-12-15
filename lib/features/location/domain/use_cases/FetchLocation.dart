@@ -10,6 +10,6 @@ class FetchLocation implements UseCase<LocationEntity> {
   FetchLocation({required this.repository});
 
   Future<Either<Failure, LocationEntity>> call() async {
-    return repository.getLocation();
+    return await repository.getLocation();
   }
 }

@@ -1,4 +1,6 @@
-class LocationEntity {
+import 'package:equatable/equatable.dart';
+
+class LocationEntity extends Equatable {
   final double latitude, longitude;
 
   LocationEntity({
@@ -7,11 +9,8 @@ class LocationEntity {
   });
 
   @override
-  bool operator ==(Object other) =>
-      (other is LocationEntity) &&
-      (other.latitude == this.latitude) &&
-      (other.longitude == this.longitude);
-
-  @override
-  int get hashCode => super.hashCode;
+  List<Object?> get props => [
+        latitude,
+        longitude,
+      ];
 }

@@ -1,3 +1,4 @@
+import 'package:dispatcher/features/location/domain/use_cases/FetchLocation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -11,13 +12,26 @@ class MapViewModel extends ChangeNotifier {
   late double _zoom;
   double get zoom => _zoom;
 
+  late final FetchLocation fetchLocation;
+
+  MapViewModel({required this.fetchLocation});
+
   void initializeController(GoogleMapController controller) {
     _mapController = controller;
     notifyListeners();
   }
 
-  void pinpointLocation() {
-    _pointerLocation = const LatLng(21, 12);
-    notifyListeners();
+  void pinpointLocation() async {
+    final result = await fetchLocation();
+    result.fold(
+      (failure) {
+        print('FAILURE: $failure');
+      },
+      (locationEntity) {
+        _pointerLocation =
+            LatLng(locationEntity.latitude, locationEntity.longitude);
+        notifyListeners();
+      },
+    );
   }
 }
