@@ -1,9 +1,12 @@
-import 'package:dispatcher/features/main/presentation/unknown/unknown_page.dart';
-import 'package:dispatcher/features/main/presentation/home/home_page.dart';
 import 'package:dispatcher/injection_container.dart' as injector;
-import 'package:dispatcher/utils/app_router.dart';
-import 'package:dispatcher/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'core/navigation/app_route_info_parser.dart';
+import 'core/navigation/app_router_delegate.dart';
+import 'core/navigation/route_info_model.dart';
+import 'core/navigation/route_names.dart';
+import 'core/theming/color_palettes.dart';
 
 void main() {
   injector.init();
@@ -18,12 +21,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
         accentColor: Colors.orangeAccent,
-        scaffoldBackgroundColor: brandBackground,
+        scaffoldBackgroundColor: ColorPalette.BACKGROUND_PEACH,
+        primaryTextTheme: GoogleFonts.poppinsTextTheme(),
+        textTheme: GoogleFonts.ubuntuTextTheme(),
       ),
-      home: HomePage(),
-      onGenerateRoute: (settings) => AppRouter().generateRoute(settings),
-      onUnknownRoute: (settings) => MaterialPageRoute(
-        builder: (context) => UnknownPage(),
+      home: Router(
+        routerDelegate: AppRouterDelegate(),
+        backButtonDispatcher: RootBackButtonDispatcher(),
+        routeInformationProvider: PlatformRouteInformationProvider(
+          initialRouteInformation: RouteInformation(location: RouteNames.HOME),
+        ),
+        routeInformationParser: AppRouteInfoParser<RouteInfoModel>(),
       ),
     );
   }

@@ -1,6 +1,5 @@
 import 'package:dispatcher/features/location/presentation/view_models/MapViewModel.dart';
 import 'package:dispatcher/features/location/presentation/views/components/map.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
