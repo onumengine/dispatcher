@@ -1,6 +1,6 @@
+import 'package:dispatcher/core/navigation/route_names.dart';
 import 'package:dispatcher/features/main/presentation/home/fragments/home_fragment.dart';
-import 'package:dispatcher/utils/colors.dart';
-import 'package:dispatcher/utils/constants.dart';
+import 'package:dispatcher/core/theming/color_palettes.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,14 +9,14 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: brandBackgroundApp,
+      backgroundColor: ColorPalette.BACKGROUND_PEACH,
       body: HomeFragment(),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red,
+        backgroundColor: ColorPalette.PRIMARY,
         foregroundColor: Colors.white,
         child: Icon(Icons.location_pin),
         onPressed: () {
-          Navigator.of(context).pushNamed(ROUTE_MAP);
+          Navigator.of(context).pushNamed(RouteNames.MAP);
         },
       ),
     );

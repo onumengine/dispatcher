@@ -1,6 +1,6 @@
-import 'package:dispatcher/features/main/presentation/widgets/service_tile.dart';
-import 'package:dispatcher/utils/constants.dart';
-import 'package:dispatcher/utils/extensions.dart';
+import 'package:dispatcher/core/navigation/route_names.dart';
+import 'package:dispatcher/features/main/presentation/service_tile.dart';
+import 'package:dispatcher/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 class ServiceSelectionPage extends StatelessWidget {
@@ -48,7 +48,7 @@ class ServiceSelectionPage extends StatelessWidget {
                 subtitle: 'We\'ll pick up and drop off your items',
                 onTap: () {
                   Navigator.of(context)
-                      .pushReplacementNamed(ROUTE_SET_LOCATIONS);
+                      .pushReplacementNamed(RouteNames.SET_LOCATIONS);
                 },
               ),
               SizedBox(
