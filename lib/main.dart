@@ -1,11 +1,8 @@
+import 'package:dispatcher/features/main/presentation/home_page.dart';
 import 'package:dispatcher/injection_container.dart' as injector;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'core/navigation/app_route_info_parser.dart';
-import 'core/navigation/app_router_delegate.dart';
-import 'core/navigation/route_info_model.dart';
-import 'core/navigation/route_names.dart';
 import 'core/theming/color_palettes.dart';
 
 void main() {
@@ -25,14 +22,7 @@ class MyApp extends StatelessWidget {
         primaryTextTheme: GoogleFonts.poppinsTextTheme(),
         textTheme: GoogleFonts.ubuntuTextTheme(),
       ),
-      home: Router(
-        routerDelegate: AppRouterDelegate(),
-        backButtonDispatcher: RootBackButtonDispatcher(),
-        routeInformationProvider: PlatformRouteInformationProvider(
-          initialRouteInformation: RouteInformation(location: RouteNames.HOME),
-        ),
-        routeInformationParser: AppRouteInfoParser<RouteInfoModel>(),
-      ),
+      home: HomePage(),
     );
   }
 }
