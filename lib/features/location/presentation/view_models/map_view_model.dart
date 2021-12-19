@@ -14,7 +14,9 @@ class MapViewModel extends ChangeNotifier {
 
   late final FetchLocation fetchLocation;
 
-  MapViewModel({required this.fetchLocation});
+  MapViewModel({required this.fetchLocation})
+      : _zoom = 1.0,
+        _pointerLocation = LatLng(0, 0);
 
   void initializeController(GoogleMapController controller) {
     _mapController = controller;
@@ -33,5 +35,11 @@ class MapViewModel extends ChangeNotifier {
         notifyListeners();
       },
     );
+  }
+
+  @override
+  void dispose() {
+    _mapController.dispose();
+    super.dispose();
   }
 }

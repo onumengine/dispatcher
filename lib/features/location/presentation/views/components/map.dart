@@ -1,4 +1,4 @@
-import 'package:dispatcher/features/location/presentation/view_models/MapViewModel.dart';
+import 'package:dispatcher/features/location/presentation/view_models/map_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';

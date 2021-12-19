@@ -1,5 +1,5 @@
 import 'package:dispatcher/core/navigation/route_names.dart';
-import 'package:dispatcher/features/main/presentation/service_tile.dart';
+import 'package:dispatcher/features/main/presentation/views/components/service_tile.dart';
 import 'package:dispatcher/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 

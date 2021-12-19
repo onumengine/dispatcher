@@ -1,5 +1,5 @@
 import 'package:dispatcher/core/navigation/route_names.dart';
-import 'package:dispatcher/features/main/presentation/home/fragments/home_fragment.dart';
+import 'package:dispatcher/features/main/presentation/views/components/home_fragment.dart';
 import 'package:dispatcher/core/theming/color_palettes.dart';
 import 'package:flutter/material.dart';
 
