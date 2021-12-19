@@ -18,14 +18,20 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'dispatcher',
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
         primarySwatch: Colors.green,
-        scaffoldBackgroundColor: ColorPalette.BACKGROUND_PEACH,
         primaryTextTheme: GoogleFonts.poppinsTextTheme(),
         textTheme: GoogleFonts.ubuntuTextTheme(),
         primaryColor: ColorPalette.PRIMARY,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: ColorPalette.PRIMARY,
+          ),
+        ),
       ),
       initialRoute: RouteNames.SPLASH,
-      onGenerateRoute: (settings) => AppRouter().generateRoute(settings),
+      onGenerateRoute: (settings) =>
+          injector.serviceLocator<AppRouter>().generateRoute(settings),
     );
   }
 }

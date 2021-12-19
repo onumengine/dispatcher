@@ -1,8 +1,28 @@
+import 'dart:async';
+
+import 'package:dispatcher/core/navigation/app_router.dart';
+import 'package:dispatcher/core/navigation/route_names.dart';
 import 'package:dispatcher/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(
+      Duration(milliseconds: 2000),
+      () {
+        Navigator.of(context).pushNamed(RouteNames.ONBOARDING);
+      },
+    );
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,

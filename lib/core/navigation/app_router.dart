@@ -5,6 +5,7 @@ import 'package:dispatcher/features/location/presentation/views/pages/map_page.d
 import 'package:dispatcher/features/main/presentation/views/pages/home_page.dart';
 import 'package:dispatcher/features/main/presentation/views/pages/service_selection_page.dart';
 import 'package:dispatcher/features/main/presentation/views/pages/unknown_page.dart';
+import 'package:dispatcher/features/onboarding/presentation/ui/screens/onboarding.dart';
 import 'package:dispatcher/features/onboarding/presentation/ui/screens/splash_screen.dart';
 import 'package:dispatcher/injection_container.dart' as injector;
 import 'package:flutter/material.dart';
@@ -28,6 +29,10 @@ class AppRouter {
           ),
         );
         */
+      case RouteNames.ONBOARDING:
+        return MaterialPageRoute(
+          builder: (context) => OnboardingScreen(),
+        );
       case RouteNames.SERVICE_SELECTION:
         return MaterialPageRoute(
           builder: (context) => ServiceSelectionPage(),

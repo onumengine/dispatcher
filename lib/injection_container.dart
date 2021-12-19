@@ -1,3 +1,4 @@
+import 'package:dispatcher/core/navigation/app_router.dart';
 import 'package:dispatcher/core/network/network_info.dart';
 import 'package:dispatcher/core/platform/location_permission_info.dart';
 import 'package:dispatcher/core/platform/location_service_info.dart';
@@ -66,6 +67,9 @@ void initCore() {
     () => LocationServiceInfoImplementation(),
   );
   */
+  serviceLocator.registerLazySingleton<AppRouter>(
+    () => AppRouter(),
+  );
 }
 
 void initExternal() {
