@@ -57,8 +57,8 @@ flutter:
     - assets/
     - assets/images/
     - assets/vectors/
-    - assets/vectors/images
-    - assets/vectors/icons
+    - assets/vectors/images/
+    - assets/vectors/icons/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
