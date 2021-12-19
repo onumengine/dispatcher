@@ -19,11 +19,13 @@ void init() {
 
 void initFeatures() {
   // VIEW MODELS
+  /*
   serviceLocator.registerLazySingleton<MapViewModel>(
     () => MapViewModel(
       fetchLocation: serviceLocator(),
     ),
   );
+  */
 
   // USE CASES
   serviceLocator.registerLazySingleton<FetchLocation>(
@@ -33,6 +35,7 @@ void initFeatures() {
   );
 
   // REPOSITORIES
+  /*
   serviceLocator.registerLazySingleton<LocationRepository>(
     () => DeviceLocationRepository(
       locationDataSource: serviceLocator(),
@@ -46,6 +49,7 @@ void initFeatures() {
   serviceLocator.registerLazySingleton<LocationSensorDataSource>(
     () => LocationSensorDataSourceImpl(),
   );
+  */
 }
 
 void initCore() {
@@ -54,12 +58,14 @@ void initCore() {
       serviceLocator(),
     ),
   );
+  /*
   serviceLocator.registerLazySingleton<LocationPermissionInfo>(
     () => LocationPermissionInfoImplementation(),
   );
   serviceLocator.registerLazySingleton<LocationServiceInfo>(
     () => LocationServiceInfoImplementation(),
   );
+  */
 }
 
 void initExternal() {

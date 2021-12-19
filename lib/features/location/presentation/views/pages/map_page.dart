@@ -1,3 +1,4 @@
+/*
 import 'package:dispatcher/features/location/presentation/view_models/map_view_model.dart';
 import 'package:dispatcher/features/location/presentation/views/components/map.dart';
 import 'package:flutter/material.dart';
@@ -38,3 +39,4 @@ class MapPage extends StatelessWidget {
     );
   }
 }
+*/

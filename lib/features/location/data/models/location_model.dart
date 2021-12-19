@@ -1,3 +1,4 @@
+/*
 import 'dart:convert';
 
 import 'package:dispatcher/features/location/domain/entities/location_entity.dart';
@@ -51,3 +52,4 @@ class LocationModel extends LocationEntity {
     return 'latitude: $latitude \nlongitude: $longitude';
   }
 }
+*/

@@ -17,6 +17,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => HomePage(),
         );
+      /*
       case RouteNames.MAP:
         return MaterialPageRoute(
           builder: (context) => ChangeNotifierProvider(
@@ -26,6 +27,7 @@ class AppRouter {
             child: MapPage(),
           ),
         );
+        */
       case RouteNames.SERVICE_SELECTION:
         return MaterialPageRoute(
           builder: (context) => ServiceSelectionPage(),
