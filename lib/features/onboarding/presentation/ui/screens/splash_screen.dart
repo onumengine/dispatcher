@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:dispatcher/core/navigation/app_router.dart';
 import 'package:dispatcher/core/navigation/route_names.dart';
 import 'package:dispatcher/core/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-      Duration(milliseconds: 2000),
+      Duration(milliseconds: 5000),
       () {
         Navigator.of(context).pushNamed(RouteNames.ONBOARDING);
       },
@@ -44,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 RichText(
                   text: TextSpan(
-                    text: 'Hungry',
+                    text: 'Dispatch',
                     style: TextStyle(
                       fontSize: 44,
                       fontWeight: FontWeight.w600,
@@ -53,7 +52,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     ),
                     children: [
                       TextSpan(
-                        text: 'Man',
+                        text: 'Now',
                         style: TextStyle(
                           fontFamily: GoogleFonts.ubuntu().fontFamily,
                           fontSize: 44,
