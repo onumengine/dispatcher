@@ -1,8 +1,6 @@
 import 'package:dispatcher/core/navigation/route_names.dart';
-import 'package:dispatcher/core/widgets/action_button.dart';
 import 'package:dispatcher/features/onboarding/presentation/ui/components/onboarding_component.dart';
 import 'package:flutter/material.dart';
-import 'package:introduction_screen/introduction_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {

@@ -28,6 +28,22 @@ class MyApp extends StatelessWidget {
             primary: ColorPalette.PRIMARY,
           ),
         ),
+        inputDecorationTheme: InputDecorationTheme(
+          hintStyle: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+            height: 24,
+            color: ColorPalette.TEXTFIELD_HINT_COLOR,
+          ),
+          iconColor: ColorPalette.TEXTFIELD_HINT_COLOR,
+          contentPadding: EdgeInsets.symmetric(
+            vertical: 8,
+            horizontal: 12,
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: ColorPalette.PRIMARY),
+          ),
+        ),
       ),
       initialRoute: RouteNames.SPLASH,
       onGenerateRoute: (settings) =>

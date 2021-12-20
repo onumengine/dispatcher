@@ -1,11 +1,13 @@
 import 'package:dispatcher/features/login/presentation/views/components/login_canvas.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
         alignment: AlignmentDirectional.center,
@@ -24,6 +26,31 @@ class LoginPage extends StatelessWidget {
                   offset: Offset.zero,
                   blurRadius: 4,
                   spreadRadius: 4,
+                ),
+              ],
+            ),
+            child: Column(
+              children: <Widget>[
+                SizedBox(height: screenSize.height / 47.2),
+                Align(
+                  alignment: AlignmentDirectional.topStart,
+                  child: Text(
+                    'Login',
+                    style: GoogleFonts.poppins().copyWith(
+                      color: Theme.of(context).primaryColor,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500,
+                      height: 36 / 24,
+                    ),
+                  ),
+                ),
+                Form(
+                  child: Column(
+                    children: <Widget>[
+                      TextFormField(),
+                      TextFormField(),
+                    ],
+                  ),
                 ),
               ],
             ),
