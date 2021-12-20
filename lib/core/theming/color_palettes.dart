@@ -7,5 +7,5 @@ abstract class ColorPalette {
   static const BACKGROUND_PEACH = Color(0xfffdeceb);
   static const PRIMARY_TEXT = Color(0xff050505);
   static const BACKGROUND_GREY = Color(0xffc4c4c4);
+  static const BACKGROUND_LIGHT = Color(0xfffff4f3);
 }
-
