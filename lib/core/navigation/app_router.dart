@@ -7,6 +7,8 @@ import 'package:dispatcher/features/main/presentation/views/pages/service_select
 import 'package:dispatcher/features/main/presentation/views/pages/unknown_page.dart';
 import 'package:dispatcher/features/onboarding/presentation/ui/screens/onboarding.dart';
 import 'package:dispatcher/features/onboarding/presentation/ui/screens/splash_screen.dart';
+import 'package:dispatcher/features/onboarding/presentation/view_models/onboarding_view_model.dart';
+import 'package:dispatcher/features/onboarding/presentation/view_models/splash_view_model.dart';
 import 'package:dispatcher/injection_container.dart' as injector;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -31,7 +33,10 @@ class AppRouter {
         */
       case RouteNames.ONBOARDING:
         return MaterialPageRoute(
-          builder: (context) => OnboardingScreen(),
+          builder: (context) => ChangeNotifierProvider(
+            create: (context) => OnboardingViewModel(),
+            child: OnboardingScreen(),
+          ),
         );
       case RouteNames.SERVICE_SELECTION:
         return MaterialPageRoute(
@@ -39,7 +44,10 @@ class AppRouter {
         );
       case RouteNames.SPLASH:
         return MaterialPageRoute(
-          builder: (context) => SplashScreen(),
+          builder: (context) => ChangeNotifierProvider(
+            create: (context) => SplashViewModel(),
+            child: SplashScreen(),
+          ),
         );
       default:
         return MaterialPageRoute(

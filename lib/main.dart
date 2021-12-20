@@ -1,9 +1,9 @@
-import 'package:dispatcher/core/navigation/app_router.dart';
-import 'package:dispatcher/core/navigation/route_names.dart';
 import 'package:dispatcher/injection_container.dart' as injector;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'core/navigation/app_router.dart';
+import 'core/navigation/route_names.dart';
 import 'core/theming/color_palettes.dart';
 
 void main() {
