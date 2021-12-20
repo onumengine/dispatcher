@@ -2,6 +2,8 @@ import 'package:dispatcher/core/navigation/route_names.dart';
 import 'package:dispatcher/features/location/domain/use_cases/FetchLocation.dart';
 import 'package:dispatcher/features/location/presentation/view_models/map_view_model.dart';
 import 'package:dispatcher/features/location/presentation/views/pages/map_page.dart';
+import 'package:dispatcher/features/login/presentation/view_models/login_view_model.dart';
+import 'package:dispatcher/features/login/presentation/views/pages/login_page.dart';
 import 'package:dispatcher/features/main/presentation/views/pages/home_page.dart';
 import 'package:dispatcher/features/main/presentation/views/pages/service_selection_page.dart';
 import 'package:dispatcher/features/main/presentation/views/pages/unknown_page.dart';
@@ -31,9 +33,16 @@ class AppRouter {
           ),
         );
         */
+      case RouteNames.LOGIN:
+        return MaterialPageRoute(
+          builder: (context) => ChangeNotifierProvider<LoginViewModel>(
+            create: (context) => LoginViewModel(),
+            child: LoginPage(),
+          ),
+        );
       case RouteNames.ONBOARDING:
         return MaterialPageRoute(
-          builder: (context) => ChangeNotifierProvider(
+          builder: (context) => ChangeNotifierProvider<OnboardingViewModel>(
             create: (context) => OnboardingViewModel(),
             child: OnboardingScreen(),
           ),
@@ -44,7 +53,7 @@ class AppRouter {
         );
       case RouteNames.SPLASH:
         return MaterialPageRoute(
-          builder: (context) => ChangeNotifierProvider(
+          builder: (context) => ChangeNotifierProvider<SplashViewModel>(
             create: (context) => SplashViewModel(),
             child: SplashScreen(),
           ),

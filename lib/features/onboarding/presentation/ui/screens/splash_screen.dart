@@ -15,9 +15,9 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-      Duration(milliseconds: 5000),
+      Duration(milliseconds: 2000),
       () {
-        Navigator.of(context).pushNamed(RouteNames.ONBOARDING);
+        Navigator.of(context).pushReplacementNamed(RouteNames.ONBOARDING);
       },
     );
   }

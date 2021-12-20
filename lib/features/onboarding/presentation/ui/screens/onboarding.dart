@@ -1,3 +1,4 @@
+import 'package:dispatcher/core/navigation/route_names.dart';
 import 'package:dispatcher/core/widgets/action_button.dart';
 import 'package:dispatcher/features/onboarding/presentation/ui/components/onboarding_component.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         buttonText: 'Get Started',
         imageName: 'enjoy_your_meal.png',
         onTap: () {
-          _switchToPage(0);
+          Navigator.of(context).pushReplacementNamed(RouteNames.LOGIN);
         },
       ),
     ];
