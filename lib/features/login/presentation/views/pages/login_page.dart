@@ -147,7 +147,9 @@ class LoginPage extends StatelessWidget {
                       height: screenSize.height / 40.72,
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushNamed(RouteNames.SIGN_UP);
+                      },
                       child: RichText(
                         text: TextSpan(
                           text: 'Don\'t have an account? ',

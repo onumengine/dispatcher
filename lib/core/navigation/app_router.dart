@@ -11,6 +11,7 @@ import 'package:dispatcher/features/onboarding/presentation/ui/screens/onboardin
 import 'package:dispatcher/features/onboarding/presentation/ui/screens/splash_screen.dart';
 import 'package:dispatcher/features/onboarding/presentation/view_models/onboarding_view_model.dart';
 import 'package:dispatcher/features/onboarding/presentation/view_models/splash_view_model.dart';
+import 'package:dispatcher/features/sign_in/presentation/view_models/sign_up_view_model.dart';
 import 'package:dispatcher/features/sign_in/presentation/views/pages/sign_up.dart';
 import 'package:dispatcher/injection_container.dart' as injector;
 import 'package:flutter/material.dart';
@@ -54,7 +55,10 @@ class AppRouter {
         );
       case RouteNames.SIGN_UP:
         return MaterialPageRoute(
-          builder: (context) => SignUpPage(),
+          builder: (context) => ChangeNotifierProvider<SignUpViewModel>(
+            create: (context) => SignUpViewModel(),
+            child: SignUpPage(),
+          ),
         );
       case RouteNames.SPLASH:
         return MaterialPageRoute(

@@ -17,69 +17,73 @@ class OnboardingComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size screenSize = MediaQuery.of(context).size;
-    return Container(
-      constraints: BoxConstraints.expand(),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            height: screenSize.height / 5.24,
-          ),
-          Image.asset(
-            IMAGES_PATH + imageName,
-            height: screenSize.height / 3.06,
-          ),
-          SizedBox(height: 103),
-          Text(
-            title,
-            style: TextStyle(
-              fontFamily: GoogleFonts.poppins().fontFamily,
-              fontSize: 36,
-              fontWeight: FontWeight.w500,
-              height: 54 / 36,
-              color: Colors.black,
+    return LayoutBuilder(builder: (context, constraints) {
+      return Container(
+        height: constraints.maxHeight,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: constraints.maxHeight / 5.24,
             ),
-          ),
-          SizedBox(
-            height: screenSize.height / 89.6,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 56),
-            child: Text(
-              subtitle,
-              textAlign: TextAlign.center,
+            Image.asset(
+              IMAGES_PATH + imageName,
+              height: constraints.maxHeight / 3.06,
+            ),
+            Flexible(
+              child: SizedBox(),
+              fit: FlexFit.tight,
+            ),
+            Text(
+              title,
               style: TextStyle(
-                fontSize: 18,
-                height: 25.2 / 18,
+                fontFamily: GoogleFonts.poppins().fontFamily,
+                fontSize: 36,
+                fontWeight: FontWeight.w500,
+                height: 54 / 36,
                 color: Colors.black,
               ),
             ),
-          ),
-          SizedBox(
-            height: screenSize.height / 11.78,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: ElevatedButton(
-              onPressed: onTap,
+            SizedBox(
+              height: constraints.maxHeight / 89.6,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 56),
               child: Text(
-                buttonText,
-              ),
-              style: ButtonStyle(
-                fixedSize: MaterialStateProperty.all<Size>(
-                  Size(MediaQuery.of(context).size.width, 50),
+                subtitle,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  height: 25.2 / 18,
+                  color: Colors.black,
                 ),
               ),
             ),
-          ),
-          SizedBox(
-            height: screenSize.height / 14,
-          ),
-        ],
-      ),
-    );
+            SizedBox(
+              height: constraints.maxHeight / 11.78,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: ElevatedButton(
+                onPressed: onTap,
+                child: Text(
+                  buttonText,
+                ),
+                style: ButtonStyle(
+                  fixedSize: MaterialStateProperty.all<Size>(
+                    Size(constraints.maxWidth, 50),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: constraints.maxHeight / 14,
+            ),
+          ],
+        ),
+      );
+    });
   }
 }
