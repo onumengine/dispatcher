@@ -26,6 +26,10 @@ class MyApp extends StatelessWidget {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             primary: ColorPalette.PRIMARY,
+            elevation: 4,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
           ),
         ),
         inputDecorationTheme: InputDecorationTheme(
@@ -37,6 +41,12 @@ class MyApp extends StatelessWidget {
           ),
           iconColor: ColorPalette.TEXTFIELD_HINT_COLOR,
           focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: ColorPalette.PRIMARY,
+              width: 2,
+            ),
+          ),
+          enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: ColorPalette.PRIMARY),
           ),
         ),
