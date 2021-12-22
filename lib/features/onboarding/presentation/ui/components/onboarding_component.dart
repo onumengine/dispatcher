@@ -67,18 +67,11 @@ class OnboardingComponent extends StatelessWidget {
               onPressed: onTap,
               child: Text(
                 buttonText,
-                style: TextStyle(
-                  fontSize: 18,
-                  height: 25.23 / 18,
-                  color: Colors.white,
-                  fontFamily: GoogleFonts.poppins().fontFamily,
-                ),
               ),
               style: ButtonStyle(
                 fixedSize: MaterialStateProperty.all<Size>(
                   Size(MediaQuery.of(context).size.width, 50),
                 ),
-                //shape: MaterialStateProperty.all<OutlinedBorder>(Border)
               ),
             ),
           ),

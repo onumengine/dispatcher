@@ -9,4 +9,5 @@ abstract class ColorPalette {
   static const BACKGROUND_GREY = Color(0xffc4c4c4);
   static const BACKGROUND_LIGHT = Color(0xfffff4f3);
   static const TEXTFIELD_HINT_COLOR = Color(0xffada8a8);
+  static const PALE_TEXT_COLOR = Color(0xff929090);
 }

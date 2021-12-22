@@ -30,6 +30,12 @@ class MyApp extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
+            textStyle: TextStyle(
+              fontSize: 18,
+              height: 25.23 / 18,
+              color: Colors.white,
+              fontFamily: GoogleFonts.poppins().fontFamily,
+            ),
           ),
         ),
         inputDecorationTheme: InputDecorationTheme(
