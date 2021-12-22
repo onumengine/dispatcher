@@ -101,7 +101,10 @@ class SignUpPage extends StatelessWidget {
                         hintText: 'Confirm Password',
                       ),
                     ),
-                    SizedBox(height: screenSize.height / 7.72),
+                    Flexible(
+                      child: SizedBox(),
+                      fit: FlexFit.tight,
+                    ),
                   ],
                 ),
               ),
