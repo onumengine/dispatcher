@@ -1,7 +1,4 @@
 import 'package:dispatcher/core/navigation/route_names.dart';
-import 'package:dispatcher/features/location/domain/use_cases/FetchLocation.dart';
-import 'package:dispatcher/features/location/presentation/view_models/map_view_model.dart';
-import 'package:dispatcher/features/location/presentation/views/pages/map_page.dart';
 import 'package:dispatcher/features/login/presentation/view_models/login_view_model.dart';
 import 'package:dispatcher/features/login/presentation/views/pages/login_page.dart';
 import 'package:dispatcher/features/main/presentation/views/pages/home_page.dart';
@@ -11,9 +8,8 @@ import 'package:dispatcher/features/onboarding/presentation/ui/screens/onboardin
 import 'package:dispatcher/features/onboarding/presentation/ui/screens/splash_screen.dart';
 import 'package:dispatcher/features/onboarding/presentation/view_models/onboarding_view_model.dart';
 import 'package:dispatcher/features/onboarding/presentation/view_models/splash_view_model.dart';
-import 'package:dispatcher/features/sign_in/presentation/view_models/sign_up_view_model.dart';
-import 'package:dispatcher/features/sign_in/presentation/views/pages/sign_up.dart';
-import 'package:dispatcher/injection_container.dart' as injector;
+import 'package:dispatcher/features/sign_up/presentation/view_models/sign_up_view_model.dart';
+import 'package:dispatcher/features/sign_up/presentation/views/pages/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -34,7 +30,7 @@ class AppRouter {
             child: MapPage(),
           ),
         );
-        */
+      */
       case RouteNames.LOGIN:
         return MaterialPageRoute(
           builder: (context) => ChangeNotifierProvider<LoginViewModel>(
