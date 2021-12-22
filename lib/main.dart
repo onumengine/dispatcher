@@ -32,14 +32,10 @@ class MyApp extends StatelessWidget {
           hintStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            height: 24,
+            height: 24 / 16,
             color: ColorPalette.TEXTFIELD_HINT_COLOR,
           ),
           iconColor: ColorPalette.TEXTFIELD_HINT_COLOR,
-          contentPadding: EdgeInsets.symmetric(
-            vertical: 8,
-            horizontal: 12,
-          ),
           focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: ColorPalette.PRIMARY),
           ),

@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  final _formKey = GlobalKey<FormState>();
+
+  LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,30 +31,39 @@ class LoginPage extends StatelessWidget {
                 ),
               ],
             ),
-            child: Column(
-              children: <Widget>[
-                SizedBox(height: screenSize.height / 47.2),
-                Align(
-                  alignment: AlignmentDirectional.topStart,
-                  child: Text(
-                    'Login',
-                    style: GoogleFonts.poppins().copyWith(
-                      color: Theme.of(context).primaryColor,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w500,
-                      height: 36 / 24,
+            child: Form(
+              key: _formKey,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(height: screenSize.height / 47.2),
+                    Align(
+                      alignment: AlignmentDirectional.topStart,
+                      child: Text(
+                        'Login',
+                        style: GoogleFonts.poppins().copyWith(
+                          color: Theme.of(context).primaryColor,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500,
+                          height: 36 / 24,
+                        ),
+                      ),
                     ),
-                  ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.person_outline),
+                        hintText: 'Full Name',
+                      ),
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.security),
+                        hintText: 'Password',
+                      ),
+                    ),
+                  ],
                 ),
-                Form(
-                  child: Column(
-                    children: <Widget>[
-                      TextFormField(),
-                      TextFormField(),
-                    ],
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
         ],
