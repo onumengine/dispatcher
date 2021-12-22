@@ -8,6 +8,8 @@ import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
+  final _fullName = TextEditingController();
+  final _password = TextEditingController();
 
   LoginPage({Key? key}) : super(key: key);
 
@@ -57,13 +59,16 @@ class LoginPage extends StatelessWidget {
                       ),
                       SizedBox(height: screenSize.height / 15.19),
                       TextFormField(
+                        controller: _fullName,
                         decoration: InputDecoration(
                           prefixIcon: Icon(Icons.person_outline),
                           hintText: 'Full Name',
                         ),
+                        validator: viewModel.fullNameIsValid,
                       ),
                       SizedBox(height: screenSize.height / 23.56),
                       TextFormField(
+                        controller: _password,
                         autocorrect: false,
                         obscureText: !viewModel.passwordIsVisible,
                         decoration: InputDecoration(
@@ -78,6 +83,7 @@ class LoginPage extends StatelessWidget {
                           ),
                           hintText: 'Password',
                         ),
+                        validator: viewModel.passwordIsStrong,
                       ),
                       SizedBox(height: screenSize.height / 47.2),
                       Row(
@@ -139,9 +145,16 @@ class LoginPage extends StatelessWidget {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.of(context).pushNamed(RouteNames.SIGN_UP);
+                          viewModel.login(
+                              _fullName.text, _password.text, _formKey);
                         },
-                        child: Text('Login'),
+                        child: (viewModel.loginState == LoginState.loggingIn)
+                            ? Center(
+                                child: CircularProgressIndicator(
+                                  color: Colors.white,
+                                ),
+                              )
+                            : Text('Login'),
                         style: ButtonStyle(
                           fixedSize: MaterialStateProperty.all<Size>(
                             Size(MediaQuery.of(context).size.width, 50),
