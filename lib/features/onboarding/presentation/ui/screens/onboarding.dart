@@ -18,9 +18,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     super.initState();
     _pages = <Widget>[
       OnboardingComponent(
-        title: 'Pick A Meal',
-        subtitle:
-            'Discover the best food from over 100+ resturants and fast delivery to your doorstep',
+        title: 'Create An order',
+        subtitle: 'Pick an item you want delivered to your doorstep',
         buttonText: 'Next',
         imageName: 'pick_a_meal.png',
         onTap: () {
@@ -29,8 +28,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ),
       OnboardingComponent(
         title: 'Fast Delivery',
-        subtitle:
-            'Receive your order in less than an hour or pick a specific delivery time.',
+        subtitle: 'Find a dispatch rider close to you',
         buttonText: 'Next',
         imageName: 'fast_delivery.png',
         onTap: () {
@@ -39,8 +37,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ),
       OnboardingComponent(
         title: 'Enjoy Your Meal',
-        subtitle:
-            'Take a meal with hot, tasty, healthy food we made just for you',
+        subtitle: 'Track your package until it gets to your location',
         buttonText: 'Get Started',
         imageName: 'enjoy_your_meal.png',
         onTap: () {
