@@ -1,3 +1,4 @@
+import 'package:dispatcher/core/navigation/route_names.dart';
 import 'package:dispatcher/core/theming/color_palettes.dart';
 import 'package:dispatcher/features/login/presentation/views/components/login_canvas.dart';
 import 'package:dispatcher/features/sign_up/presentation/view_models/sign_up_view_model.dart';
@@ -134,6 +135,8 @@ class SignUpPage extends StatelessWidget {
                           _password.text,
                           _formKey,
                         );
+                        Navigator.of(context)
+                            .pushNamed(RouteNames.PHONE_VERIFICATION);
                       },
                       child: viewModel.signUpState == SignUpState.signingIn
                           ? Center(

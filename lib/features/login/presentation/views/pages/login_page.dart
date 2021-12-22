@@ -147,6 +147,8 @@ class LoginPage extends StatelessWidget {
                         onPressed: () {
                           viewModel.login(
                               _fullName.text, _password.text, _formKey);
+                          Navigator.of(context)
+                              .pushNamed(RouteNames.PHONE_VERIFICATION);
                         },
                         child: (viewModel.loginState == LoginState.loggingIn)
                             ? Center(

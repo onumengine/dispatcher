@@ -3,6 +3,7 @@ class RouteNames {
   static const LOGIN = '/login';
   static const MAP = '/map';
   static const ONBOARDING = '/onboarding';
+  static const PHONE_VERIFICATION = '/phone_verification';
   static const SERVICE_SELECTION = '/select_service';
   static const SET_LOCATIONS = '/set_locations';
   static const SIGN_UP = '/sign_up';

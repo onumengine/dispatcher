@@ -8,6 +8,7 @@ import 'package:dispatcher/features/onboarding/presentation/ui/screens/onboardin
 import 'package:dispatcher/features/onboarding/presentation/ui/screens/splash_screen.dart';
 import 'package:dispatcher/features/onboarding/presentation/view_models/onboarding_view_model.dart';
 import 'package:dispatcher/features/onboarding/presentation/view_models/splash_view_model.dart';
+import 'package:dispatcher/features/phone_verification/presentation/views/pages/phone_verification_page.dart';
 import 'package:dispatcher/features/sign_up/presentation/view_models/sign_up_view_model.dart';
 import 'package:dispatcher/features/sign_up/presentation/views/pages/sign_up.dart';
 import 'package:flutter/material.dart';
@@ -44,6 +45,10 @@ class AppRouter {
             create: (context) => OnboardingViewModel(),
             child: OnboardingScreen(),
           ),
+        );
+      case RouteNames.PHONE_VERIFICATION:
+        return MaterialPageRoute(
+          builder: (context) => PhoneVerificationPage(),
         );
       case RouteNames.SERVICE_SELECTION:
         return MaterialPageRoute(
