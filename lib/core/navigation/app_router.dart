@@ -8,6 +8,7 @@ import 'package:dispatcher/features/onboarding/presentation/ui/screens/onboardin
 import 'package:dispatcher/features/onboarding/presentation/ui/screens/splash_screen.dart';
 import 'package:dispatcher/features/onboarding/presentation/view_models/onboarding_view_model.dart';
 import 'package:dispatcher/features/onboarding/presentation/view_models/splash_view_model.dart';
+import 'package:dispatcher/features/phone_verification/presentation/view_models/phone_verification_view_model.dart';
 import 'package:dispatcher/features/phone_verification/presentation/views/pages/phone_verification_page.dart';
 import 'package:dispatcher/features/sign_up/presentation/view_models/sign_up_view_model.dart';
 import 'package:dispatcher/features/sign_up/presentation/views/pages/sign_up.dart';
@@ -19,7 +20,7 @@ class AppRouter {
     switch (settings.name) {
       case RouteNames.HOME:
         return MaterialPageRoute(
-          builder: (context) => HomePage(),
+          builder: (_) => HomePage(),
         );
       /*
       case RouteNames.MAP:
@@ -34,43 +35,46 @@ class AppRouter {
       */
       case RouteNames.LOGIN:
         return MaterialPageRoute(
-          builder: (context) => ChangeNotifierProvider<LoginViewModel>(
-            create: (context) => LoginViewModel(),
+          builder: (_) => ChangeNotifierProvider<LoginViewModel>(
+            create: (_) => LoginViewModel(),
             child: LoginPage(),
           ),
         );
       case RouteNames.ONBOARDING:
         return MaterialPageRoute(
-          builder: (context) => ChangeNotifierProvider<OnboardingViewModel>(
-            create: (context) => OnboardingViewModel(),
+          builder: (_) => ChangeNotifierProvider<OnboardingViewModel>(
+            create: (_) => OnboardingViewModel(),
             child: OnboardingScreen(),
           ),
         );
       case RouteNames.PHONE_VERIFICATION:
         return MaterialPageRoute(
-          builder: (context) => PhoneVerificationPage(),
+          builder: (_) => ChangeNotifierProvider<PhoneVerificationViewModel>(
+            create: (_) => PhoneVerificationViewModel(),
+            child: PhoneVerificationPage(),
+          ),
         );
       case RouteNames.SERVICE_SELECTION:
         return MaterialPageRoute(
-          builder: (context) => ServiceSelectionPage(),
+          builder: (_) => ServiceSelectionPage(),
         );
       case RouteNames.SIGN_UP:
         return MaterialPageRoute(
-          builder: (context) => ChangeNotifierProvider<SignUpViewModel>(
-            create: (context) => SignUpViewModel(),
+          builder: (_) => ChangeNotifierProvider<SignUpViewModel>(
+            create: (_) => SignUpViewModel(),
             child: SignUpPage(),
           ),
         );
       case RouteNames.SPLASH:
         return MaterialPageRoute(
-          builder: (context) => ChangeNotifierProvider<SplashViewModel>(
-            create: (context) => SplashViewModel(),
+          builder: (_) => ChangeNotifierProvider<SplashViewModel>(
+            create: (_) => SplashViewModel(),
             child: SplashScreen(),
           ),
         );
       default:
         return MaterialPageRoute(
-          builder: (context) => UnknownPage(),
+          builder: (_) => UnknownPage(),
         );
     }
   }

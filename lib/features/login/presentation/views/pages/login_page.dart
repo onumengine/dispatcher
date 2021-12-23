@@ -6,12 +6,19 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class LoginPage extends StatelessWidget {
-  final _formKey = GlobalKey<FormState>();
-  final _fullName = TextEditingController();
-  final _password = TextEditingController();
-
+class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final _formKey = GlobalKey<FormState>();
+
+  final _fullName = TextEditingController();
+
+  final _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -205,5 +212,12 @@ class LoginPage extends StatelessWidget {
         }),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _fullName.dispose();
+    _password.dispose();
+    super.dispose();
   }
 }

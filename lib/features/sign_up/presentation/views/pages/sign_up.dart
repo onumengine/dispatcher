@@ -144,7 +144,7 @@ class SignUpPage extends StatelessWidget {
                                 color: Colors.white,
                               ),
                             )
-                          : Text('Sign Out'),
+                          : Text('Sign Up'),
                       style: ButtonStyle(
                         fixedSize: MaterialStateProperty.all<Size>(
                           Size(MediaQuery.of(context).size.width, 50),
