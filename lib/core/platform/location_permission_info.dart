@@ -1,4 +1,3 @@
-/*
 import 'package:geolocator/geolocator.dart';
 
 abstract class LocationPermissionInfo {
@@ -13,4 +12,3 @@ class LocationPermissionInfoImplementation implements LocationPermissionInfo {
   Future<LocationPermission> get getLocationPermission async =>
       await Geolocator.checkPermission();
 }
-*/

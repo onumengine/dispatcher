@@ -6,7 +6,6 @@ import 'package:dispatcher/features/location/data/data_sources/location_sensor_d
 import 'package:dispatcher/features/location/data/repositories/device_location_repository.dart';
 import 'package:dispatcher/features/location/domain/repositories/location_repository.dart';
 import 'package:dispatcher/features/location/domain/use_cases/FetchLocation.dart';
-import 'package:dispatcher/features/location/presentation/view_models/map_view_model.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
@@ -19,15 +18,6 @@ void init() {
 }
 
 void initFeatures() {
-  // VIEW MODELS
-  /*
-  serviceLocator.registerLazySingleton<MapViewModel>(
-    () => MapViewModel(
-      fetchLocation: serviceLocator(),
-    ),
-  );
-  */
-
   // USE CASES
   serviceLocator.registerLazySingleton<FetchLocation>(
     () => FetchLocation(
@@ -36,7 +26,6 @@ void initFeatures() {
   );
 
   // REPOSITORIES
-  /*
   serviceLocator.registerLazySingleton<LocationRepository>(
     () => DeviceLocationRepository(
       locationDataSource: serviceLocator(),
@@ -50,7 +39,6 @@ void initFeatures() {
   serviceLocator.registerLazySingleton<LocationSensorDataSource>(
     () => LocationSensorDataSourceImpl(),
   );
-  */
 }
 
 void initCore() {
@@ -59,14 +47,12 @@ void initCore() {
       serviceLocator(),
     ),
   );
-  /*
   serviceLocator.registerLazySingleton<LocationPermissionInfo>(
     () => LocationPermissionInfoImplementation(),
   );
   serviceLocator.registerLazySingleton<LocationServiceInfo>(
     () => LocationServiceInfoImplementation(),
   );
-  */
   serviceLocator.registerLazySingleton<AppRouter>(
     () => AppRouter(),
   );

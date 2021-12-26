@@ -1,4 +1,3 @@
-/*
 import 'package:dispatcher/features/location/data/models/location_model.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -48,4 +47,3 @@ class LocationSensorDataSourceImpl implements LocationSensorDataSource {
   }
   */
 }
-*/

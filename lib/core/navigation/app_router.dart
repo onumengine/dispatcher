@@ -1,5 +1,8 @@
 import 'package:dispatcher/core/navigation/route_names.dart';
+import 'package:dispatcher/features/location/domain/use_cases/FetchLocation.dart';
+import 'package:dispatcher/features/location/presentation/view_models/map_view_model.dart';
 import 'package:dispatcher/features/location/presentation/views/pages/location_permission_request_page.dart';
+import 'package:dispatcher/features/location/presentation/views/pages/map_page.dart';
 import 'package:dispatcher/features/login/presentation/view_models/login_view_model.dart';
 import 'package:dispatcher/features/login/presentation/views/pages/login_page.dart';
 import 'package:dispatcher/features/main/presentation/views/pages/home_page.dart';
@@ -16,6 +19,7 @@ import 'package:dispatcher/features/sign_up/presentation/view_models/sign_up_vie
 import 'package:dispatcher/features/sign_up/presentation/views/pages/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:dispatcher/injection_container.dart' as injector;
 
 class AppRouter {
   Route<dynamic> generateRoute(RouteSettings settings) {
@@ -24,17 +28,17 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => HomePage(),
         );
-      /*
+
       case RouteNames.MAP:
         return MaterialPageRoute(
-          builder: (context) => ChangeNotifierProvider(
-            create: (context) => MapViewModel(
+          builder: (context) => ChangeNotifierProvider<MapViewModel>(
+            create: (_) => MapViewModel(
               fetchLocation: injector.serviceLocator<FetchLocation>(),
             ),
             child: MapPage(),
           ),
         );
-      */
+
       case RouteNames.LOCATION_PERMISSION_REQUEST:
         return MaterialPageRoute(
           builder: (_) => LocationPermissionRequestPage(),

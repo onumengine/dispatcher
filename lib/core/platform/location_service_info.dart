@@ -1,4 +1,3 @@
-/*
 import 'package:geolocator/geolocator.dart';
 
 abstract class LocationServiceInfo {
@@ -9,4 +8,3 @@ class LocationServiceInfoImplementation implements LocationServiceInfo {
   Future<bool> get locationServiceIsEnabled async =>
       await Geolocator.isLocationServiceEnabled();
 }
-*/
