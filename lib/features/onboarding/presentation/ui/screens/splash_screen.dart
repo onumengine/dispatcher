@@ -65,7 +65,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                 ),
                 Text(
-                  'Healthy food for everyone',
+                  'Speedy deliveries for you',
                   style: TextStyle(
                     fontFamily: GoogleFonts.ubuntu().fontFamily,
                     fontSize: 18,
