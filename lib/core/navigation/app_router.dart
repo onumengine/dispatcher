@@ -10,6 +10,7 @@ import 'package:dispatcher/features/onboarding/presentation/view_models/onboardi
 import 'package:dispatcher/features/onboarding/presentation/view_models/splash_view_model.dart';
 import 'package:dispatcher/features/phone_verification/presentation/view_models/phone_verification_view_model.dart';
 import 'package:dispatcher/features/phone_verification/presentation/views/pages/phone_verification_page.dart';
+import 'package:dispatcher/features/phone_verification/presentation/views/pages/phone_verified_page.dart';
 import 'package:dispatcher/features/sign_up/presentation/view_models/sign_up_view_model.dart';
 import 'package:dispatcher/features/sign_up/presentation/views/pages/sign_up.dart';
 import 'package:flutter/material.dart';
@@ -53,6 +54,10 @@ class AppRouter {
             create: (_) => PhoneVerificationViewModel(),
             child: PhoneVerificationPage(),
           ),
+        );
+      case RouteNames.PHONE_VERIFIED:
+        return MaterialPageRoute(
+          builder: (_) => PhoneVerifiedPage(),
         );
       case RouteNames.SERVICE_SELECTION:
         return MaterialPageRoute(

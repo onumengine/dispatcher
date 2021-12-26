@@ -1,3 +1,4 @@
+import 'package:dispatcher/core/navigation/route_names.dart';
 import 'package:dispatcher/core/theming/color_palettes.dart';
 import 'package:dispatcher/features/phone_verification/presentation/view_models/phone_verification_view_model.dart';
 import 'package:flutter/material.dart';
@@ -96,7 +97,9 @@ class OtpInputComponent extends StatelessWidget {
                 height: constraints.maxHeight / 81,
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushNamed(RouteNames.PHONE_VERIFIED);
+                },
                 child: RichText(
                   text: TextSpan(
                     text: 'Didn\'t receive the code? ',
