@@ -1,4 +1,5 @@
 import 'package:dispatcher/core/navigation/route_names.dart';
+import 'package:dispatcher/features/location/presentation/views/pages/location_permission_request_page.dart';
 import 'package:dispatcher/features/login/presentation/view_models/login_view_model.dart';
 import 'package:dispatcher/features/login/presentation/views/pages/login_page.dart';
 import 'package:dispatcher/features/main/presentation/views/pages/home_page.dart';
@@ -34,6 +35,10 @@ class AppRouter {
           ),
         );
       */
+      case RouteNames.LOCATION_PERMISSION_REQUEST:
+        return MaterialPageRoute(
+          builder: (_) => LocationPermissionRequestPage(),
+        );
       case RouteNames.LOGIN:
         return MaterialPageRoute(
           builder: (_) => ChangeNotifierProvider<LoginViewModel>(

@@ -1,5 +1,6 @@
 class RouteNames {
   static const HOME = '/';
+  static const LOCATION_PERMISSION_REQUEST = '/location_permission_request';
   static const LOGIN = '/login';
   static const MAP = '/map';
   static const ONBOARDING = '/onboarding';

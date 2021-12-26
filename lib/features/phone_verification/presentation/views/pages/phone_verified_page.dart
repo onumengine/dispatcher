@@ -1,3 +1,4 @@
+import 'package:dispatcher/core/navigation/route_names.dart';
 import 'package:dispatcher/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -47,7 +48,10 @@ class PhoneVerifiedPage extends StatelessWidget {
             ),
             SvgPicture.asset(VECTOR_IMAGES_PATH + 'verified.svg'),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context)
+                    .pushNamed(RouteNames.LOCATION_PERMISSION_REQUEST);
+              },
               child: Text(
                 'Continue',
                 style: TextStyle(
