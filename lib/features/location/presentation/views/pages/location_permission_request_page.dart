@@ -1,3 +1,4 @@
+import 'package:dispatcher/core/navigation/route_names.dart';
 import 'package:dispatcher/core/theming/color_palettes.dart';
 import 'package:dispatcher/core/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +61,9 @@ class LocationPermissionRequestPage extends StatelessWidget {
               Column(
                 children: [
                   ElevatedButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(RouteNames.HOME);
+                    },
                     icon: Icon(Icons.location_on_outlined),
                     label: Text('Use your location'),
                     style:
@@ -77,7 +80,9 @@ class LocationPermissionRequestPage extends StatelessWidget {
                     height: constraints.maxHeight / 56,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed(RouteNames.HOME);
+                    },
                     child: Text(
                       'Skip for now',
                       style: TextStyle(
