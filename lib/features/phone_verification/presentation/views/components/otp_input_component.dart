@@ -4,7 +4,6 @@ import 'package:dispatcher/features/phone_verification/presentation/view_models/
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class OtpInputComponent extends StatelessWidget {
   const OtpInputComponent({Key? key}) : super(key: key);
@@ -74,7 +73,7 @@ class OtpInputComponent extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  context.read<PhoneVerificationViewModel>().goToPage(1);
+                  Navigator.of(context).pushNamed(RouteNames.PHONE_VERIFIED);
                 },
                 child: Text(
                   'Verify',
@@ -97,9 +96,7 @@ class OtpInputComponent extends StatelessWidget {
                 height: constraints.maxHeight / 81,
               ),
               GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pushNamed(RouteNames.PHONE_VERIFIED);
-                },
+                onTap: () {},
                 child: RichText(
                   text: TextSpan(
                     text: 'Didn\'t receive the code? ',
