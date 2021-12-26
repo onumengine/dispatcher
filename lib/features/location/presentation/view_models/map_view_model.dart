@@ -9,6 +9,9 @@ class MapViewModel extends ChangeNotifier {
   LatLng _pointerLocation = const LatLng(45.521563, -122.677433);
   LatLng get pointerLocation => _pointerLocation;
 
+  Set<Marker> _markers = <Marker>{};
+  Set<Marker> get markers => _markers;
+
   late double _zoom;
   double get zoom => _zoom;
 
@@ -35,6 +38,11 @@ class MapViewModel extends ChangeNotifier {
         notifyListeners();
       },
     );
+  }
+
+  void addMarker(Marker marker) {
+    _markers.add(marker);
+    notifyListeners();
   }
 
   @override

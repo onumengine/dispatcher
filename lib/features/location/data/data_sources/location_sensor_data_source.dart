@@ -10,7 +10,9 @@ class LocationSensorDataSourceImpl implements LocationSensorDataSource {
 
   Future<LocationModel> getLocation() async {
     try {
-      Position position = await Geolocator.getCurrentPosition();
+      Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high,
+      );
       return LocationModel.fromPosition(position);
     } on Exception catch (e) {
       throw e;
