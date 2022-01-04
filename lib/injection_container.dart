@@ -5,7 +5,7 @@ import 'package:dispatcher/core/platform/location_service_info.dart';
 import 'package:dispatcher/features/location/data/data_sources/location_sensor_data_source.dart';
 import 'package:dispatcher/features/location/data/repositories/device_location_repository.dart';
 import 'package:dispatcher/features/location/domain/repositories/location_repository.dart';
-import 'package:dispatcher/features/location/domain/use_cases/FetchLocation.dart';
+import 'package:dispatcher/features/location/domain/use_cases/fetch_location.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 

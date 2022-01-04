@@ -1,5 +1,5 @@
 import 'package:dispatcher/core/navigation/route_names.dart';
-import 'package:dispatcher/features/location/domain/use_cases/FetchLocation.dart';
+import 'package:dispatcher/features/location/domain/use_cases/fetch_location.dart';
 import 'package:dispatcher/features/location/presentation/view_models/map_view_model.dart';
 import 'package:dispatcher/features/location/presentation/views/pages/location_permission_request_page.dart';
 import 'package:dispatcher/features/location/presentation/views/pages/map_page.dart';
