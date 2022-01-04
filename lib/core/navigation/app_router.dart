@@ -28,17 +28,6 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => HomePage(),
         );
-
-      case RouteNames.MAP:
-        return MaterialPageRoute(
-          builder: (context) => ChangeNotifierProvider<MapViewModel>(
-            create: (_) => MapViewModel(
-              fetchLocation: injector.serviceLocator<FetchLocation>(),
-            ),
-            child: MapPage(),
-          ),
-        );
-
       case RouteNames.LOCATION_PERMISSION_REQUEST:
         return MaterialPageRoute(
           builder: (_) => LocationPermissionRequestPage(),
@@ -48,6 +37,15 @@ class AppRouter {
           builder: (_) => ChangeNotifierProvider<LoginViewModel>(
             create: (_) => LoginViewModel(),
             child: LoginPage(),
+          ),
+        );
+      case RouteNames.MAP:
+        return MaterialPageRoute(
+          builder: (context) => ChangeNotifierProvider<MapViewModel>(
+            create: (_) => MapViewModel(
+              fetchLocation: injector.serviceLocator<FetchLocation>(),
+            ),
+            child: MapPage(),
           ),
         );
       case RouteNames.ONBOARDING:
