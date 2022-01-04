@@ -5,7 +5,7 @@ import 'package:dispatcher/features/location/presentation/views/pages/location_p
 import 'package:dispatcher/features/location/presentation/views/pages/map_page.dart';
 import 'package:dispatcher/features/login/presentation/view_models/login_view_model.dart';
 import 'package:dispatcher/features/login/presentation/views/pages/login_page.dart';
-import 'package:dispatcher/features/main/presentation/views/pages/home_page.dart';
+import 'package:dispatcher/features/main/presentation/view_models/home_view_model.dart';
 import 'package:dispatcher/features/main/presentation/views/pages/service_selection_page.dart';
 import 'package:dispatcher/features/main/presentation/views/pages/unknown_page.dart';
 import 'package:dispatcher/features/onboarding/presentation/ui/screens/onboarding.dart';
@@ -17,6 +17,7 @@ import 'package:dispatcher/features/phone_verification/presentation/views/pages/
 import 'package:dispatcher/features/phone_verification/presentation/views/pages/phone_verified_page.dart';
 import 'package:dispatcher/features/sign_up/presentation/view_models/sign_up_view_model.dart';
 import 'package:dispatcher/features/sign_up/presentation/views/pages/sign_up.dart';
+import 'package:dispatcher/ui/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dispatcher/injection_container.dart' as injector;
@@ -26,7 +27,10 @@ class AppRouter {
     switch (settings.name) {
       case RouteNames.HOME:
         return MaterialPageRoute(
-          builder: (_) => HomePage(),
+          builder: (context) => ChangeNotifierProvider<HomeViewModel>(
+            create: (_) => HomeViewModel(),
+            child: HomeScreen(),
+          ),
         );
       case RouteNames.LOCATION_PERMISSION_REQUEST:
         return MaterialPageRoute(
