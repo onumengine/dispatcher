@@ -20,26 +20,48 @@ class DeviceLocationRepository implements LocationRepository {
     required this.networkInfo,
   });
 
+  // @override
+  // Future<Either<Failure, LocationEntity>> getLocation() async {
+  //   if (await networkInfo.deviceIsConnected) {
+  //     if (await locationPermissionInfo.locationPermissionIsGranted) {
+  //       if (await locationServiceInfo.locationServiceIsEnabled) {
+  //         try {
+  //           LocationEntity location =
+  //               await this.locationDataSource.getLocation();
+  //           return Right(location);
+  //         } catch (e) {
+  //           return Left(LocationFetchingFailure());
+  //         }
+  //       } else {
+  //         return Left(LocationServiceDisabledFailure());
+  //       }
+  //     } else {
+  //       return Left(LocationPermissionFailure());
+  //     }
+  //   } else {
+  //     return Left(NetworkConnectionFailure());
+  //   }
+  // }
+
   @override
   Future<Either<Failure, LocationEntity>> getLocation() async {
-    if (await networkInfo.deviceIsConnected) {
-      if (await locationPermissionInfo.locationPermissionIsGranted) {
-        if (await locationServiceInfo.locationServiceIsEnabled) {
-          try {
-            LocationEntity location =
-                await this.locationDataSource.getLocation();
-            return Right(location);
-          } catch (e) {
-            return Left(LocationFetchingFailure());
-          }
-        } else {
-          return Left(LocationServiceDisabledFailure());
-        }
-      } else {
+    if (!await networkInfo.deviceIsConnected) {
+      return left(NetworkConnectionFailure());
+    }
+    if (!await locationPermissionInfo.locationPermissionIsGranted) {
+      await locationPermissionInfo.getLocationPermission();
+      if (!await locationServiceInfo.locationServiceIsEnabled) {
         return Left(LocationPermissionFailure());
       }
-    } else {
-      return Left(NetworkConnectionFailure());
+    }
+    if (!await locationServiceInfo.locationServiceIsEnabled) {
+      return Left(LocationServiceDisabledFailure());
+    }
+    try {
+      LocationEntity location = await this.locationDataSource.getLocation();
+      return Right(location);
+    } catch (e) {
+      return Left(LocationFetchingFailure());
     }
   }
 }
