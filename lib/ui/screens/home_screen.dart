@@ -1,18 +1,27 @@
 import 'package:dispatcher/features/main/presentation/view_models/home_view_model.dart';
+import 'package:dispatcher/ui/organisms/cart_component.dart';
+import 'package:dispatcher/ui/organisms/favorites_component.dart';
+import 'package:dispatcher/ui/organisms/feed_component.dart';
+import 'package:dispatcher/ui/organisms/profile_component.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
+
+  final tabs = <Widget>[
+    FeedComponent(),
+    FavoritesComponent(),
+    CartComponent(),
+    ProfileComponent(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Consumer<HomeViewModel>(
         builder: (context, viewModel, child) {
-          return LayoutBuilder(
-            builder: (context, constraints) => Column(),
-          );
+          return tabs[viewModel.tabIndex];
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -34,6 +43,9 @@ class HomeScreen extends StatelessWidget {
             label: '',
           ),
         ],
+        onTap: (index) {
+          Provider.of<HomeViewModel>(context, listen: false).switchToTab(index);
+        },
       ),
     );
   }

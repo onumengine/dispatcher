@@ -7,4 +7,8 @@ class HomeViewModel extends ChangeNotifier {
     _tabIndex = value;
     notifyListeners();
   }
+
+  void switchToTab(int index) {
+    tabIndex = index;
+  }
 }
